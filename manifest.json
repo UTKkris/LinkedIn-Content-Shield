@@ -1,0 +1,23 @@
+{
+    "manifest_version":3,
+    "name": "LinkedIn Content Shield",
+    "version": "1.0",
+    "description": "Zero-trust browser-side OSINT mitigation tool for document uploads.",
+    "permissions":[
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions":[
+        "*://*.linkedin.com/*"
+    ],
+    "content_scripts":[
+        {
+            "matches":["*://*.linkedin.com/*"],
+            "js":["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Content Shield Settings"
+    }
+}
